@@ -173,9 +173,10 @@ export function PizzaStoryAnimation() {
     <section id="home" ref={root} className="relative" aria-label="How a Slice of Life pizza comes together">
       <div data-pin className="relative h-[100svh] overflow-hidden bg-ink">
         <div className="bg-spotlight absolute inset-0" aria-hidden />
+        <div className="absolute inset-x-0 top-0 bottom-[30%] flex items-center justify-center md:bottom-0 md:pr-[14%]">
         <div
           data-pizza
-          className="absolute left-1/2 top-[38%] aspect-square w-[min(118vw,62svh)] -translate-x-1/2 -translate-y-1/2 md:top-1/2 md:w-[min(80svh,58vw)] md:translate-x-[-30%]"
+          className="relative aspect-square w-[min(108vw,58svh)] md:w-[min(78svh,54vw)]"
           style={{ perspective: 1200 }}
         >
           <div data-glow className="absolute inset-[-10%] rounded-full bg-tomato/20 opacity-0 blur-3xl" aria-hidden />
@@ -201,6 +202,7 @@ export function PizzaStoryAnimation() {
           <div data-boxclosed className="absolute inset-[-8%] flex items-center opacity-0">
             <img src={boxClosed} alt="Pizza boxed in a closed, branded Slice of Life box" width={1400} height={1050} className="w-full shadow-food [mask-image:radial-gradient(closest-side,black_82%,transparent)]" />
           </div>
+        </div>
         </div>
 
         <Hero />
