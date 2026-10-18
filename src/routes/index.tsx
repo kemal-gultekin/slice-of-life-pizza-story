@@ -1,24 +1,43 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/Navbar";
+import { PizzaStoryAnimation } from "@/components/PizzaStoryAnimation";
+import { BrandStory } from "@/components/BrandStory";
+import { MenuSection } from "@/components/MenuSection";
+import { SignaturePizza } from "@/components/SignaturePizza";
+import { Gallery } from "@/components/Gallery";
+import { WhySliceOfLife } from "@/components/WhySliceOfLife";
+import { OrderSection } from "@/components/OrderSection";
+import { Footer } from "@/components/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Slice of Life — Pizza in Lefkoşa" },
+      { name: "description", content: "Fresh pizza, calzones and more in Ortaköy, Lefkoşa. Open daily 11 AM – 11 PM. Order on WhatsApp." },
+      { property: "og:title", content: "Slice of Life — Good things take dough" },
+      { property: "og:description", content: "Fresh pizza, calzones and more in Ortaköy, Lefkoşa. Order on WhatsApp." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="grain">
+      <a href="#menu" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[90] focus:bg-tomato focus:p-3">Skip to menu</a>
+      <Navbar />
+      <main>
+        <PizzaStoryAnimation />
+        <BrandStory />
+        <MenuSection />
+        <SignaturePizza />
+        <Gallery />
+        <WhySliceOfLife />
+        <OrderSection />
+      </main>
+      <Footer />
     </div>
   );
 }
