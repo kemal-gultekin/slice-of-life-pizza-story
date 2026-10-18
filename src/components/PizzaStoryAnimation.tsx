@@ -130,7 +130,7 @@ export function PizzaStoryAnimation() {
 
       // Hero out → stage 1
       tl.to(q("[data-hero]"), { autoAlpha: 0, y: -40, duration: 0.6 }, 0);
-      tl.to(q("[data-pizza]"), { scale: mobile ? 1 : 1.04, xPercent: mobile ? 0 : 8, duration: 1 }, 0);
+      tl.to(q("[data-pizza]"), { scale: mobile ? 1 : 1.04, xPercent: mobile ? 0 : -42, duration: 1.2 }, 0);
       capIn(0, 0.4);
       capOut(0, 1.4);
       // Sauce: organic spread from the center outward
@@ -160,7 +160,7 @@ export function PizzaStoryAnimation() {
       // Lid closes: open box tilts away, closed box settles in
       tl.to(q("[data-boxopen]"), { rotateX: 35, scale: 0.9, autoAlpha: 0, duration: 0.8, ease: "power2.in" }, 8.8);
       tl.fromTo(q("[data-boxclosed]"), { autoAlpha: 0, y: -30, scale: 1.04 }, { autoAlpha: 1, y: 0, scale: 1, duration: 0.8, ease: "power2.out" }, 9.2);
-      tl.to(q("[data-pizza]"), { xPercent: mobile ? 0 : -14, duration: 1 }, 9.2);
+      
       tl.to(q("[data-finale]"), { autoAlpha: 1, pointerEvents: "auto", duration: 0.6 }, 9.7);
       tl.to({}, { duration: 0.6 });
     }, root);
@@ -173,7 +173,7 @@ export function PizzaStoryAnimation() {
     <section id="home" ref={root} className="relative" aria-label="How a Slice of Life pizza comes together">
       <div data-pin className="relative h-[100svh] overflow-hidden bg-ink">
         <div className="bg-spotlight absolute inset-0" aria-hidden />
-        <div className="absolute inset-x-0 top-0 bottom-[30%] flex items-center justify-center md:bottom-0 md:pr-[14%]">
+        <div className="absolute inset-x-0 top-0 bottom-[30%] flex items-center justify-center md:bottom-0 md:pl-[34%]">
         <div
           data-pizza
           className="relative aspect-square w-[min(108vw,58svh)] md:w-[min(78svh,54vw)]"
