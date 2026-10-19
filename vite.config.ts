@@ -12,4 +12,8 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    // Pre-bundle animation libs so Vite never re-optimizes mid-session (which caused duplicate React copies).
+    optimizeDeps: { include: ["framer-motion", "gsap", "gsap/ScrollTrigger", "lucide-react"] },
+  },
 });
