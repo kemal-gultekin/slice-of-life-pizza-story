@@ -199,7 +199,7 @@ export function PizzaStoryAnimation() {
             ))}
             <div data-steam className="pointer-events-none absolute inset-x-[25%] -top-[8%] h-1/3 bg-[radial-gradient(closest-side,var(--color-mozz),transparent)] opacity-0 blur-2xl" aria-hidden />
           </div>
-          <div data-boxclosed className="absolute inset-[-8%] flex items-center opacity-0">
+          <div data-boxclosed className="absolute inset-[2%] flex items-center opacity-0">
             <img src={boxClosed} alt="Pizza boxed in a closed, branded Slice of Life box" width={1400} height={1050} className="w-full shadow-food [mask-image:radial-gradient(closest-side,black_82%,transparent)]" />
           </div>
         </div>
