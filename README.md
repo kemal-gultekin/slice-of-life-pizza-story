@@ -1,29 +1,21 @@
-# Welcome to your Lovable project
+# Slice of Life — website
 
-This project was built with [Lovable](https://lovable.dev).
+Cinematic one-page site for Slice of Life, Lefkoşa. Built with React + TanStack Start (Vite), Tailwind v4, GSAP ScrollTrigger, Framer Motion and Lucide.
 
-## Build with Lovable
-
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+## Run
+```
+npm install
 npm run dev
 ```
 
-## Built with
+## Edit content
+- **Business info / WhatsApp number:** `src/config/siteConfig.ts` — `whatsappNumber` is international format, digits only (e.g. `905338560333`). Set to `""` to disable WhatsApp buttons.
+- **Menu:** `src/data/menu.ts` — name, description, ingredients, `price` (TRY; use `null` if unverified), optional `image`, `dietary`. `signatureId` picks the spotlight dish.
+- **Gallery:** `src/data/gallery.ts`.
+- **Images:** replace files in `src/assets/` keeping the same filename. The six pizza-story images (`stage-*.jpg`, `box-open.jpg`) must keep the same square framing and pizza position so layers line up.
 
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
+## Still needed from the owner
+- Real photos of the restaurant, team and dishes (current images are AI-generated illustrations).
+- Full pizza menu with prices (the current site lists only the Mini Margarita and two calzones).
+- Verified Instagram / Facebook links (`socials` in siteConfig).
+- Dietary information per dish.
