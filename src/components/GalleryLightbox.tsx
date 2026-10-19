@@ -31,8 +31,8 @@ export function GalleryLightbox({ index, onChange }: { index: number | null; onC
           <button onClick={(e) => { e.stopPropagation(); onChange((index - 1 + n) % n); }} aria-label="Previous image" className="absolute left-2 inline-flex size-12 items-center justify-center text-cream md:left-6"><ChevronLeft className="size-8" /></button>
           <AnimatePresence mode="wait">
             <motion.figure key={index} initial={{ opacity: 0, scale: 0.97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.35 }} onClick={(e) => e.stopPropagation()} className="max-h-full max-w-5xl">
-              <img src={gallery[index].src} alt={gallery[index].alt} className="max-h-[80svh] w-auto object-contain" />
-              <figcaption className="mt-3 flex justify-between text-sm text-cream/60"><span>{gallery[index].alt}</span><span>{index + 1} / {n}</span></figcaption>
+              <img src={gallery[index]!.src} alt={gallery[index]!.alt} className="max-h-[80svh] w-auto object-contain" />
+              <figcaption className="mt-3 flex justify-between text-sm text-cream/60"><span>{gallery[index]!.alt}</span><span>{index + 1} / {n}</span></figcaption>
             </motion.figure>
           </AnimatePresence>
           <button onClick={(e) => { e.stopPropagation(); onChange((index + 1) % n); }} aria-label="Next image" className="absolute right-2 inline-flex size-12 items-center justify-center text-cream md:right-6"><ChevronRight className="size-8" /></button>
