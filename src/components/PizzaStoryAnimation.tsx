@@ -108,25 +108,25 @@ export function PizzaStoryAnimation() {
       const caps = q("[data-cap]");
 
       gsap.set(layers.slice(1), { autoAlpha: 0 });
-      gsap.set(layers[1], { autoAlpha: 1, clipPath: "circle(0% at 52% 48%)" });
+      gsap.set(layers[1]!, { autoAlpha: 1, clipPath: "circle(0% at 52% 48%)" });
       gsap.set(caps, { autoAlpha: 0, y: 30 });
 
       const tl = gsap.timeline({
         defaults: { ease: "power2.inOut" },
         scrollTrigger: {
-          trigger: root.current,
+          trigger: root.current!,
           start: "top top",
           end: mobile ? "+=380%" : "+=560%",
           scrub: 0.8,
-          pin: q("[data-pin]")[0],
+          pin: q("[data-pin]")[0]!,
           anticipatePin: 1,
         },
       });
 
       const capIn = (i: number, at: number | string) => {
-        tl.to(caps[i], { autoAlpha: 1, y: 0, duration: 0.5 }, at);
+        tl.to(caps[i]!, { autoAlpha: 1, y: 0, duration: 0.5 }, at);
       };
-      const capOut = (i: number, at: number | string) => tl.to(caps[i], { autoAlpha: 0, y: -30, duration: 0.4 }, at);
+      const capOut = (i: number, at: number | string) => tl.to(caps[i]!, { autoAlpha: 0, y: -30, duration: 0.4 }, at);
 
       // Hero out → stage 1
       tl.to(q("[data-hero]"), { autoAlpha: 0, y: -40, duration: 0.6 }, 0);
@@ -134,19 +134,19 @@ export function PizzaStoryAnimation() {
       capIn(0, 0.4);
       capOut(0, 1.4);
       // Sauce: organic spread from the center outward
-      tl.to(layers[1], { clipPath: "circle(75% at 52% 48%)", duration: 1.4, ease: "power1.inOut" }, 1.5);
+      tl.to(layers[1]!, { clipPath: "circle(75% at 52% 48%)", duration: 1.4, ease: "power1.inOut" }, 1.5);
       capIn(1, 1.7);
       capOut(1, 3);
       // Mozzarella
-      tl.fromTo(layers[2], { autoAlpha: 0, scale: 1.015 }, { autoAlpha: 1, scale: 1, duration: 0.9 }, 3.1);
+      tl.fromTo(layers[2]!, { autoAlpha: 0, scale: 1.015 }, { autoAlpha: 1, scale: 1, duration: 0.9 }, 3.1);
       capIn(2, 3.2);
       capOut(2, 4.3);
       // Toppings settle gently
-      tl.fromTo(layers[3], { autoAlpha: 0, y: -14, filter: "blur(6px)" }, { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 0.9, ease: "power2.out" }, 4.4);
+      tl.fromTo(layers[3]!, { autoAlpha: 0, y: -14, filter: "blur(6px)" }, { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 0.9, ease: "power2.out" }, 4.4);
       capIn(3, 4.5);
       capOut(3, 5.6);
       // Bake: warm crossfade + glow
-      tl.fromTo(layers[4], { autoAlpha: 0, filter: "brightness(1.25) saturate(0.8)" }, { autoAlpha: 1, filter: "brightness(1) saturate(1)", duration: 1 }, 5.7);
+      tl.fromTo(layers[4]!, { autoAlpha: 0, filter: "brightness(1.25) saturate(0.8)" }, { autoAlpha: 1, filter: "brightness(1) saturate(1)", duration: 1 }, 5.7);
       tl.to(q("[data-glow]"), { autoAlpha: 1, duration: 1 }, 5.7);
       tl.to(q("[data-steam]"), { autoAlpha: 0.5, duration: 0.6 }, 6.2);
       capIn(4, 5.9);
