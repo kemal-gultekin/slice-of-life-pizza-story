@@ -68,8 +68,8 @@ function StaticStory() {
           {stages.map((s, i) => (
             <li key={i}>
               <img src={s.src} alt={s.alt} width={1400} height={1400} loading={i ? "lazy" : "eager"} className="aspect-square w-full object-cover" />
-              <p className="eyebrow mt-4 text-tomato">{captions[i].k}</p>
-              <p className="font-display mt-2 text-4xl">{captions[i].t}</p>
+              <p className="eyebrow mt-4 text-tomato">{captions[i]!.k}</p>
+              <p className="font-display mt-2 text-4xl">{captions[i]!.t}</p>
             </li>
           ))}
           <li>
