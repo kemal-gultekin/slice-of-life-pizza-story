@@ -26,10 +26,10 @@ export function PizzaCard({ item, index }: { item: MenuItem; index: number }) {
           {price ? <span className="font-display text-2xl text-tomato">{price}</span> : <span className="eyebrow text-cream/40">Price on request</span>}
         </div>
         <h3 className={`font-display mt-3 text-mozz ${featured ? "text-5xl md:text-6xl" : "text-3xl"}`}>{item.name}</h3>
-        <p className="mt-3 text-cream/65">{item.description}</p>
-        <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-olive" aria-label="Ingredients">
+        {item.description && <p className="mt-3 text-cream/65">{item.description}</p>}
+        {item.ingredients.length > 0 && <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-olive" aria-label="Ingredients">
           {item.ingredients.map((g) => <li key={g}>{g}</li>)}
-        </ul>
+        </ul>}
         {item.dietary && <p className="eyebrow mt-3 text-olive">{item.dietary}</p>}
         <div className="mt-6">
           <WhatsAppButton message={pizzaOrderMessage(item.name, item.price)} variant={featured ? "primary" : "ghost"} className="!py-3">
