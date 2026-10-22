@@ -5,7 +5,7 @@ import { PizzaCard } from "./PizzaCard";
 import { Reveal } from "./Reveal";
 
 export function MenuSection() {
-  const [cat, setCat] = useState<(typeof categories)[number]>("All");
+  const [cat, setCat] = useState<(typeof categories)[number]>("Pizza & Calzone");
   const items = cat === "All" ? menu : menu.filter((m) => m.category === cat);
 
   return (
@@ -39,7 +39,7 @@ export function MenuSection() {
             {items.map((item, i) => <PizzaCard key={item.id} item={item} index={i} />)}
           </AnimatePresence>
         </motion.div>
-        <p className="mt-16 text-sm text-cream/40">Prices in Turkish lira as listed on sliceoflife.site. Burgers, pasta, salads, Indian & Chinese dishes and drinks are also available — ask us on WhatsApp.</p>
+        <p className="mt-16 text-sm text-cream/40">Prices in Turkish lira as listed on sliceoflife.site. Pick a category above to see everything we serve.</p>
       </div>
     </section>
   );
